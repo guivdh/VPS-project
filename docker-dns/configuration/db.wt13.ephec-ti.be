@@ -7,5 +7,5 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 
 @		      IN		  NS		      ns.wt13.ephec-ti.be.   ; Serveur dns externe
-@         IN      NS          51.77.203.41
-NS		    IN		  A		        51.77.203.41
+NS		    IN		  A		        10.10.10.10
+box       IN      A           51.77.203.41
