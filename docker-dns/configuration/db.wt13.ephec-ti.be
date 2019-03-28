@@ -1,11 +1,21 @@
-$TTL    604800
-@       IN      SOA     ns.wt13.ephec-ti.be root.wt13.ephec-ti.be (
-                              1         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
+$ORIGIN wt13.ephec-ti.be.
+$TTL	43200
+@	IN	SOA	ns.wt13.ephec-ti.be. admin.wt13.ephec-ti.be. (
+		 	     1  	; Serial
+			 43200		; Refresh
+			  7200		; Retry
+			2419200		; Expire
+			  43200 )	; Negative Cache TTL
+;
+; name servers - NS record
+@				IN	NS			ns.wt13.ephec-ti.be.
 
-@		      IN		  NS		      ns.wt13.ephec-ti.be.   ; Serveur dns externe
-NS		    IN		  A		        10.10.10.10
-box       IN      A           51.77.203.41
+
+
+; name servers - A record
+ns 				    IN	A		51.77.203.49
+
+; web services
+serverWeb			IN	A		51.77.203.49
+www				    IN	CNAME	 	serverWeb
+b2b IN CNAME serverWeb
