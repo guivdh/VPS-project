@@ -19,3 +19,5 @@ ns 				    IN	A		51.77.203.49
 serverWeb			IN	A		51.77.203.49
 www				    IN	CNAME	 	serverWeb
 b2b IN CNAME serverWeb
+
+intranet IN CNAME serverWeb
