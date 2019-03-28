@@ -1,10 +1,16 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y bind9
 
-COPY /configuration/db.wt13.ephec-ti.be /etc/bind/db.wt13.ephec-ti.be
-COPY /configuration/db.51 /etc/bind/db.51
-COPY /configuration/named.conf.local /etc/bind/named.conf.local
+WORKDIR /etc/bind
+VOLUME ["/etc/bind"]
 
-EXPOSE 53 53/udp 53/tcp
+COPY /configuration/named.conf /etc/bind/named.conf
+COPY /configuration/named.conf.options /etc/bind/named.conf.options
+COPY /configuration/named.conf.default-zones /etc/bind/named.conf.default-zones
+COPY /configuration/named.conf.local /etc/bind/named.conf.local
+COPY /configuration/db.wt13.ephec-ti.be /etc/bind/db.wt13.ephec-ti.be
+COPY /configuration/db.interne.wt13.ephec-ti.be /etc/bind/db.interne.wt13.ephec-ti.be
+
+EXPOSE 53 53/udp
 CMD ["/usr/sbin/named", "-g", "-c", "/etc/bind/named.conf", "-u", "bind"]
