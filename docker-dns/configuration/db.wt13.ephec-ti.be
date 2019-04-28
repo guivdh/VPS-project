@@ -19,3 +19,8 @@ ns 				    IN	A		51.77.203.41
 serverWeb			IN	A		51.77.203.41
 www				    IN	CNAME	 	serverWeb
 b2b IN CNAME serverWeb
+
+mail					IN 	A		51.77.203.49
+smtp					IN	CNAME	mail
+pop3					IN	CNAME	mail
+imap IN CNAME mail
