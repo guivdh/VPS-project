@@ -21,3 +21,8 @@ www				    IN	 CNAME	 	serverWeb
 b2b 				    IN   CNAME		serverWeb
 
 intranet 			    IN   CNAME		serverWeb
+
+mail					IN 	A	51.77.203.41
+smtp					IN	CNAME	mail
+pop3					IN	CNAME	mail
+imap IN CNAME mail
