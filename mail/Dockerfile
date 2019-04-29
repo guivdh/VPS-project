@@ -2,8 +2,6 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y postfix
 
-COPY configuration/main.cf /etc/postfix/main.conf
+COPY configuration/main.cf /etc/postfix/main.cf
 
-EXPOSE 25
-
-CMD service postfix start
+CMD /etc/init.d/postfix start && /bin/bash
