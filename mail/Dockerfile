@@ -1,7 +1,5 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install -y postfix
+RUN apt-get update -y && apt-get install -y postfix
 
-COPY configuration/main.cf /etc/postfix/main.cf
-
-RUN /etc/init.d/postfix restart
+#COPY configuration/main.cf /etc/postfix/main.cf
