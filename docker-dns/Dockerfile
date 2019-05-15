@@ -3,7 +3,6 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y bind9
 
 WORKDIR /etc/bind
-VOLUME ["/etc/bind"]
 
 COPY /configuration/named.conf /etc/bind/named.conf
 COPY /configuration/named.conf.options /etc/bind/named.conf.options
