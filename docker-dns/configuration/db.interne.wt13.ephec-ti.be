@@ -9,7 +9,9 @@ $TTL	43200
 ;
 ; name servers - NS record
 @				    IN	 NS		ns.wt13.ephec-ti.be.
+@                                   IN   A              51.77.203.41
 
+@                                   IN   MX             1       mx1
 
 
 ; name servers - A record
@@ -22,6 +24,7 @@ b2b 				    IN   CNAME		serverWeb
 
 intranet 			    IN   CNAME		serverWeb
 
+mx1                                 IN   A              51.77.203.49
 mail					IN 	A	51.77.203.49
 smtp					IN	CNAME	mail
 pop3					IN	CNAME	mail
